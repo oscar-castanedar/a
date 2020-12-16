@@ -1,16 +1,20 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const cookieParser = require('cookie-parser')
-var fs=require('fs');
-var https=require('https');
-https.createServer({
+//var fs=require('fs');
+//var https=require('https');
+/*https.createServer({
   cert: fs.readFileSync('server.crt'),
   key: fs.readFileSync('server.key')
 }, app).listen(8080, () => {
   console.log("Servidor express corriendo en el puerto 8080");
-});
+});*/
 
 var app = express();
+
+app.listen(8080,()=>{
+  console.log("Servidor express corriendo en el puerto 8080");
+});
 
 app.use(
   bodyparser.urlencoded({
